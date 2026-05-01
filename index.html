@@ -137,7 +137,7 @@ footer {
   }
 }
 
-/* MÚSICA OCULTA */
+/* AUDIO OCULTO */
 audio {
   display: none;
 }
@@ -146,10 +146,18 @@ audio {
 
 <body>
 
-<!-- 🎵 MÚSICA AMBIENTE -->
-<audio autoplay loop>
+<!-- 🎵 MÚSICA AMBIENTE (INICIA NO CLIQUE) -->
+<audio id="musica" loop>
   <source src="ambient.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+document.addEventListener("click", function () {
+  const audio = document.getElementById("musica");
+  audio.volume = 0.4;
+  audio.play();
+}, { once: true });
+</script>
 
 <!-- FUNDO -->
 <div class="fundo">
