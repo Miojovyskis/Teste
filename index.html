@@ -1,13 +1,132 @@
-<main>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fragmentos da Noite</title>
 
-  <div class="post">
-    <h2>O Caminho de Volta a Ti</h2>
+  <style>
+    :root {
+      --preto: #0b0b0f;
+      --roxo-escuro: #1a1026;
+      --violeta: #4b1b6b;
+      --lilas: #9b6bcc;
+      --magenta: #7a1fa2;
+      --roxo-neon: #b56bff;
+      --cinza: #cfcad6;
+    }
 
-    <div class="media">
-      <!-- opcional -->
-    </div>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <div class="texto">
+    body {
+      font-family: Georgia, serif;
+      background: radial-gradient(circle at top, var(--roxo-escuro), var(--preto));
+      color: var(--cinza);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--lilas);
+    }
+
+    header p {
+      opacity: 0.8;
+      font-style: italic;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .post {
+      background: linear-gradient(180deg, rgba(75,27,107,0.15), rgba(0,0,0,0.6));
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 0 40px rgba(75,27,107,0.2);
+    }
+
+    .post h2 {
+      color: var(--lilas);
+      margin-bottom: 1rem;
+    }
+
+    .texto {
+      white-space: pre-line;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem;
+      opacity: 0.5;
+    }
+
+    .fundo-simbolos {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .simbolo-flutuante {
+      position: absolute;
+      font-size: 2rem;
+      animation: flutuar linear infinite;
+      opacity: 0.25;
+      text-shadow: 0 0 12px rgba(181,107,255,0.6);
+    }
+
+    .cor1 { color: var(--lilas); }
+    .cor2 { color: var(--violeta); }
+    .cor3 { color: var(--magenta); }
+    .cor4 { color: var(--roxo-neon); }
+
+    @keyframes flutuar {
+      from { transform: translateY(110vh) rotate(0deg); opacity:0;}
+      10% { opacity:1;}
+      to { transform: translateY(-10vh) rotate(360deg); opacity:0;}
+    }
+
+    main, header, footer {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="fundo-simbolos">
+    <div class="simbolo-flutuante cor1" style="left:5%; animation-duration:10s;">☽</div>
+    <div class="simbolo-flutuante cor2" style="left:12%; animation-duration:12s;">✶</div>
+    <div class="simbolo-flutuante cor3" style="left:18%; animation-duration:9s;">△</div>
+    <div class="simbolo-flutuante cor4" style="left:24%; animation-duration:11s;">⛧</div>
+  </div>
+
+  <header>
+    <h1>Fragmentos da Noite</h1>
+    <p>poemas, imagens e silêncios</p>
+  </header>
+
+  <main>
+
+    <div class="post">
+      <h2>O Caminho de Volta a Ti</h2>
+      <div class="texto">
 Diante ao pesadelo, eu sinto o teu cheiro
 Me trazendo de volta ao conforto do teu sorriso.
 
@@ -25,13 +144,12 @@ Como cada segundo sendo despercebido pelo mundo
 Me fazendo importante, me pondo em teu universo
 Me pondo ao turbilhão de sentimentos que és tu
 Onde, nele, eu sorrio diante as incertezas desse teu mundo.
+      </div>
     </div>
-  </div>
 
-  <div class="post">
-    <h2>Primavera em Mim</h2>
-
-    <div class="texto">
+    <div class="post">
+      <h2>Primavera em Mim</h2>
+      <div class="texto">
 Ao deitar à noite, penso em ti.
 O teu rosto projeta-se em meu universo.
 
@@ -50,7 +168,38 @@ até então despercebido.
 Em mim, és o meu raiar e o meu anoitecer,
 quem me tirou do inverno
 e me colocou diante da beleza que és tu.
+      </div>
     </div>
-  </div>
 
-</main>
+    <div class="post">
+      <h2>Alinhar das Incertezas</h2>
+      <div class="texto">
+E então os sentimentos se despelam aos corpos
+O aroma doce da tua presença rodeia o meu ser
+
+As verdades tocadas pelo sorrir do teu descansar
+O cuidado e o carinho afloram-se ao toque
+
+O universo estabelecendo-nos ao inconsciente
+Dando-nos um ao outro, nossas verdades se cruzam 
+
+Sonhos e desejos se manifestam ao amanhecer
+Conectando-nos ao apogeu do novo 
+
+Nos teus olhos eu vejo a vida expressar o ápice
+No tocar das mãos, a sinceridade 
+No beijar, o querer dos desejos
+
+E então no alinhar das incertezas,
+nós amamos.
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 — escrito no escuro
+  </footer>
+
+</body>
+</html>
