@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fragmentos da Noite</title>
+
+  <style>
+    :root {
+      --preto: #0b0b0f;
+      --roxo-escuro: #1a1026;
+      --violeta: #4b1b6b;
+      --lilas: #9b6bcc;
+      --magenta: #7a1fa2;
+      --roxo-neon: #b56bff;
+      --cinza: #cfcad6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: radial-gradient(circle at top, var(--roxo-escuro), var(--preto));
+      color: var(--cinza);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--lilas);
+    }
+
+    header p {
+      opacity: 0.8;
+      font-style: italic;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .post {
+      background: linear-gradient(180deg, rgba(75,27,107,0.15), rgba(0,0,0,0.6));
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 0 40px rgba(75,27,107,0.2);
+    }
+
+    .post h2 {
+      color: var(--lilas);
+      margin-bottom: 1rem;
+    }
+
+    .media {
+      margin-bottom: 1.5rem;
+    }
+
+    .media img,
+    .media video,
+    .media iframe {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .texto {
+      white-space: pre-line;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem;
+      opacity: 0.5;
+    }
+
+    /* FUNDO DINÂMICO */
+    .fundo-simbolos {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .simbolo-flutuante {
+      position: absolute;
+      font-size: 2rem;
+      animation: flutuar linear infinite;
+      opacity: 0.25;
+      text-shadow: 0 0 12px rgba(181,107,255,0.6);
+    }
+
+    .cor1 { color: var(--lilas); }
+    .cor2 { color: var(--violeta); }
+    .cor3 { color: var(--magenta); }
+    .cor4 { color: var(--roxo-neon); }
+
+    @keyframes flutuar {
+      from {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      to {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    main, header, footer {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FUNDO CORRIGIDO -->
+  <div class="fundo-simbolos">
+    <div class="simbolo-flutuante cor1" style="left:5%; animation-duration:10s;">☽</div>
+    <div class="simbolo-flutuante cor2" style="left:12%; animation-duration:12s; font-size:3rem;">✶</div>
+    <div class="simbolo-flutuante cor3" style="left:18%; animation-duration:9s;">△</div>
+    <div class="simbolo-flutuante cor4" style="left:24%; animation-duration:11s;">⛧</div>
+    <div class="simbolo-flutuante cor1" style="left:30%; animation-duration:13s;">◯</div>
+    <div class="simbolo-flutuante cor2" style="left:36%; animation-duration:8s; font-size:3rem;">✦</div>
+    <div class="simbolo-flutuante cor3" style="left:42%; animation-duration:10s;">✧</div>
+    <div class="simbolo-flutuante cor4" style="left:48%; animation-duration:9s;">⬟</div>
+    <div class="simbolo-flutuante cor1" style="left:54%; animation-duration:11s;">⬢</div>
+    <div class="simbolo-flutuante cor2" style="left:60%; animation-duration:12s;">✵</div>
+    <div class="simbolo-flutuante cor3" style="left:66%; animation-duration:8s;">✴</div>
+    <div class="simbolo-flutuante cor4" style="left:72%; animation-duration:10s;">⟁</div>
+    <div class="simbolo-flutuante cor1" style="left:78%; animation-duration:9s;">⧫</div>
+    <div class="simbolo-flutuante cor2" style="left:84%; animation-duration:11s;">⛤</div>
+    <div class="simbolo-flutuante cor3" style="left:90%; animation-duration:8s;">⛧</div>
+    <div class="simbolo-flutuante cor4" style="left:96%; animation-duration:12s;">☾</div>
+  </div>
+
+  <header>
+    <h1>Fragmentos da Noite</h1>
+    <p>poemas, imagens e silêncios</p>
+  </header>
+
+  <main>
+
+    <div class="post">
+      <h2>Título do Poema</h2>
+
+      <div class="media">
+        <!-- <img src="sua-imagem.jpg"> -->
+        <!-- <video src="video.mp4" controls></video> -->
+        <!-- <iframe src="https://www.youtube.com/embed/ID"></iframe> -->
+      </div>
+
+      <div class="texto">
+        Aqui entra o seu poema.
+
+        Quebrado em linhas,
+        pausas,
+        e respirações.
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 — escrito no escuro
+  </footer>
+
+</body>
+</html>
