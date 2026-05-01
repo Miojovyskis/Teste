@@ -7,7 +7,6 @@
 
 <style>
 :root {
-  --preto: #05050a;
   --roxo-suave: #b08cff;
   --texto: #e3d9f2;
 }
@@ -38,8 +37,8 @@ body {
   font-size: 18px;
   opacity: 0.18;
   color: #c08bff;
-  text-shadow: 0 0 12px rgba(160,90,255,0.6);
   animation: flutuar linear infinite;
+  text-shadow: 0 0 12px rgba(160,90,255,0.6);
 }
 
 @keyframes flutuar {
@@ -137,26 +136,50 @@ footer {
   }
 }
 
-/* AUDIO OCULTO */
-audio {
-  display: none;
+/* TELA DE ENTRADA */
+#start {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#start button {
+  padding: 15px 25px;
+  font-size: 18px;
+  background: #b08cff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #000;
+  box-shadow: 0 0 25px rgba(176,140,255,0.5);
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎵 MÚSICA AMBIENTE (INICIA NO CLIQUE) -->
+<!-- 🎵 MÚSICA -->
 <audio id="musica" loop>
   <source src="ambient.mp3" type="audio/mpeg">
 </audio>
 
+<!-- BOTÃO DE ENTRADA -->
+<div id="start">
+  <button onclick="iniciarSite()">Entrar no Fragmento</button>
+</div>
+
 <script>
-document.addEventListener("click", function () {
+function iniciarSite() {
   const audio = document.getElementById("musica");
-  audio.volume = 0.4;
+  audio.volume = 0.35;
   audio.play();
-}, { once: true });
+
+  document.getElementById("start").style.display = "none";
+}
 </script>
 
 <!-- FUNDO -->
