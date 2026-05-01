@@ -8,7 +8,6 @@
 <style>
 :root {
   --preto: #05050a;
-  --roxo: #6a2cff;
   --roxo-suave: #b08cff;
   --texto: #e3d9f2;
 }
@@ -137,10 +136,20 @@ footer {
     height: 240px;
   }
 }
+
+/* MÚSICA OCULTA */
+audio {
+  display: none;
+}
 </style>
 </head>
 
 <body>
+
+<!-- 🎵 MÚSICA AMBIENTE -->
+<audio autoplay loop>
+  <source src="ambient.mp3" type="audio/mpeg">
+</audio>
 
 <!-- FUNDO -->
 <div class="fundo">
@@ -167,9 +176,7 @@ footer {
 
 <!-- POST 1 -->
 <div class="post">
-  <div class="imagem">
-    <img src="111.png">
-  </div>
+  <div class="imagem"><img src="111.png"></div>
   <div class="conteudo">
     <h2>O Caminho de Volta a Ti</h2>
     <div class="texto">
@@ -196,9 +203,7 @@ Onde, nele, eu sorrio diante as incertezas desse teu mundo.
 
 <!-- POST 2 -->
 <div class="post">
-  <div class="imagem">
-    <img src="222.png">
-  </div>
+  <div class="imagem"><img src="222.png"></div>
   <div class="conteudo">
     <h2>Primavera em Mim</h2>
     <div class="texto">
@@ -226,9 +231,7 @@ e me colocou diante da beleza que és tu.
 
 <!-- POST 3 -->
 <div class="post">
-  <div class="imagem">
-    <img src="333.png">
-  </div>
+  <div class="imagem"><img src="333.png"></div>
   <div class="conteudo">
     <h2>Alinhar das Incertezas</h2>
     <div class="texto">
