@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fragmentos da Noite</title>
 
   <style>
     :root {
       --preto: #0b0b0f;
       --roxo-escuro: #1a1026;
-      --violeta: #4b1b6b;
       --lilas: #9b6bcc;
-      --magenta: #7a1fa2;
-      --roxo-neon: #b56bff;
       --cinza: #cfcad6;
     }
 
@@ -30,29 +27,46 @@
     }
 
     header {
-      padding: 4rem 2rem;
       text-align: center;
+      padding: 4rem 2rem;
     }
 
     header h1 {
-      font-size: 3rem;
       color: var(--lilas);
+      font-size: 3rem;
     }
 
     main {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       padding: 2rem;
     }
 
     .post {
-      background: linear-gradient(180deg, rgba(75,27,107,0.15), rgba(0,0,0,0.6));
-      border-radius: 12px;
-      padding: 2rem;
+      display: flex;
+      gap: 2rem;
       margin-bottom: 3rem;
+      background: rgba(0,0,0,0.5);
+      padding: 2rem;
+      border-radius: 12px;
+      align-items: center;
     }
 
-    .post h2 {
+    .imagem {
+      flex: 1;
+    }
+
+    .imagem img {
+      width: 100%;
+      border-radius: 10px;
+      filter: brightness(0.8);
+    }
+
+    .conteudo {
+      flex: 1;
+    }
+
+    .conteudo h2 {
       color: var(--lilas);
       margin-bottom: 1rem;
     }
@@ -66,6 +80,14 @@
       padding: 3rem;
       opacity: 0.5;
     }
+
+    /* RESPONSIVO (celular) */
+    @media (max-width: 768px) {
+      .post {
+        flex-direction: column;
+      }
+    }
+
   </style>
 </head>
 
@@ -77,9 +99,15 @@
 
 <main>
 
+  <!-- POST 1 -->
   <div class="post">
-    <h2>O Caminho de Volta a Ti</h2>
-    <div class="texto">
+    <div class="imagem">
+      <img src="11.png">
+    </div>
+
+    <div class="conteudo">
+      <h2>O Caminho de Volta a Ti</h2>
+      <div class="texto">
 Diante ao pesadelo, eu sinto o teu cheiro
 Me trazendo de volta ao conforto do teu sorriso.
 
@@ -97,12 +125,19 @@ Como cada segundo sendo despercebido pelo mundo
 Me fazendo importante, me pondo em teu universo
 Me pondo ao turbilhão de sentimentos que és tu
 Onde, nele, eu sorrio diante as incertezas desse teu mundo.
+      </div>
     </div>
   </div>
 
+  <!-- POST 2 -->
   <div class="post">
-    <h2>Primavera em Mim</h2>
-    <div class="texto">
+    <div class="imagem">
+      <img src="22.png">
+    </div>
+
+    <div class="conteudo">
+      <h2>Primavera em Mim</h2>
+      <div class="texto">
 Ao deitar à noite, penso em ti.
 O teu rosto projeta-se em meu universo.
 
@@ -121,12 +156,19 @@ até então despercebido.
 Em mim, és o meu raiar e o meu anoitecer,
 quem me tirou do inverno
 e me colocou diante da beleza que és tu.
+      </div>
     </div>
   </div>
 
+  <!-- POST 3 -->
   <div class="post">
-    <h2>Alinhar das Incertezas</h2>
-    <div class="texto">
+    <div class="imagem">
+      <img src="33.png">
+    </div>
+
+    <div class="conteudo">
+      <h2>Alinhar das Incertezas</h2>
+      <div class="texto">
 E então os sentimentos se despelam aos corpos
 O aroma doce da tua presença rodeia o meu ser
 
@@ -145,6 +187,7 @@ No beijar, o querer dos desejos
 
 E então no alinhar das incertezas,
 nós amamos.
+      </div>
     </div>
   </div>
 
