@@ -1,111 +1,162 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fragmentos da Noite</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fragmentos da Noite</title>
 
-  <style>
-    :root {
-      --preto: #05050a;
-      --roxo: #6a2cff;
-      --roxo-suave: #9b6bcc;
-      --texto: #d6cde0;
-    }
+<style>
+:root {
+  --preto: #05050a;
+  --roxo: #6a2cff;
+  --roxo-suave: #9b6bcc;
+  --texto: #d6cde0;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: Georgia, serif;
-      background: radial-gradient(circle at top, #120a1f, #05050a);
-      color: var(--texto);
-    }
+body {
+  font-family: Georgia, serif;
+  background: radial-gradient(circle at top, #120a1f, #05050a);
+  color: var(--texto);
+  overflow-x: hidden;
+}
 
-    header {
-      text-align: center;
-      padding: 3rem;
-    }
+/* FUNDO COM SÍMBOLOS */
+.fundo {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
 
-    header h1 {
-      color: var(--roxo-suave);
-      font-size: 2.8rem;
-    }
+.simbolo {
+  position: absolute;
+  font-size: 22px;
+  opacity: 0.25;
+  animation: subir linear infinite;
+  color: #b56bff;
+  text-shadow: 0 0 10px rgba(181,107,255,0.7);
+}
 
-    main {
-      max-width: 1300px;
-      margin: auto;
-      padding: 2rem;
-    }
+@keyframes subir {
+  from {
+    transform: translateY(110vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  to {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
 
-    .post {
-      display: flex;
-      margin-bottom: 3rem;
-      border: 1px solid rgba(155,107,204,0.4);
-      border-radius: 14px;
-      overflow: hidden;
-      background: rgba(0,0,0,0.6);
-      box-shadow: 0 0 25px rgba(155,107,204,0.15);
-    }
+/* CONTEÚDO */
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
 
-    .imagem {
-      width: 50%;
-    }
+header {
+  text-align: center;
+  padding: 3rem;
+}
 
-    .imagem img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+header h1 {
+  color: var(--roxo-suave);
+  font-size: 2.8rem;
+}
 
-    .conteudo {
-      width: 50%;
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+main {
+  max-width: 1300px;
+  margin: auto;
+  padding: 2rem;
+}
 
-    .conteudo h2 {
-      color: var(--roxo-suave);
-      margin-bottom: 1.2rem;
-      font-size: 1.8rem;
-    }
+.post {
+  display: flex;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(155,107,204,0.4);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.6);
+  box-shadow: 0 0 25px rgba(155,107,204,0.15);
+  align-items: stretch;
+}
 
-    .texto {
-      white-space: pre-line;
-      line-height: 1.7;
-      font-size: 1.05rem;
-    }
+.imagem {
+  width: 50%;
+}
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      opacity: 0.5;
-    }
+.imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    /* MOBILE */
-    @media (max-width: 768px) {
-      .post {
-        flex-direction: column;
-      }
+.conteudo {
+  width: 50%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-      .imagem, .conteudo {
-        width: 100%;
-      }
+.conteudo h2 {
+  color: var(--roxo-suave);
+  margin-bottom: 1.2rem;
+}
 
-      .imagem {
-        height: 250px;
-      }
-    }
-  </style>
+.texto {
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  opacity: 0.5;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .post {
+    flex-direction: column;
+  }
+
+  .imagem, .conteudo {
+    width: 100%;
+  }
+
+  .imagem {
+    height: 250px;
+  }
+}
+</style>
 </head>
 
 <body>
+
+<!-- SÍMBOLOS -->
+<div class="fundo">
+  <div class="simbolo" style="left:5%; animation-duration:8s;">✶</div>
+  <div class="simbolo" style="left:12%; animation-duration:10s;">△</div>
+  <div class="simbolo" style="left:20%; animation-duration:7s;">⛧</div>
+  <div class="simbolo" style="left:28%; animation-duration:9s;">◯</div>
+  <div class="simbolo" style="left:36%; animation-duration:6s;">✦</div>
+  <div class="simbolo" style="left:44%; animation-duration:8s;">✧</div>
+  <div class="simbolo" style="left:52%; animation-duration:10s;">⬟</div>
+  <div class="simbolo" style="left:60%; animation-duration:7s;">⬢</div>
+  <div class="simbolo" style="left:68%; animation-duration:9s;">✵</div>
+  <div class="simbolo" style="left:76%; animation-duration:6s;">✴</div>
+  <div class="simbolo" style="left:84%; animation-duration:8s;">⟁</div>
+  <div class="simbolo" style="left:92%; animation-duration:10s;">⧫</div>
+</div>
 
 <header>
   <h1>Fragmentos da Noite</h1>
@@ -113,15 +164,14 @@
 
 <main>
 
-  <!-- POST 1 -->
-  <div class="post">
-    <div class="imagem">
-      <img src="111.png">
-    </div>
-
-    <div class="conteudo">
-      <h2>O Caminho de Volta a Ti</h2>
-      <div class="texto">
+<!-- POST 1 -->
+<div class="post">
+  <div class="imagem">
+    <img src="111.png">
+  </div>
+  <div class="conteudo">
+    <h2>O Caminho de Volta a Ti</h2>
+    <div class="texto">
 Diante ao pesadelo, eu sinto o teu cheiro
 Me trazendo de volta ao conforto do teu sorriso.
 
@@ -139,19 +189,18 @@ Como cada segundo sendo despercebido pelo mundo
 Me fazendo importante, me pondo em teu universo
 Me pondo ao turbilhão de sentimentos que és tu
 Onde, nele, eu sorrio diante as incertezas desse teu mundo.
-      </div>
     </div>
   </div>
+</div>
 
-  <!-- POST 2 -->
-  <div class="post">
-    <div class="imagem">
-      <img src="222.png">
-    </div>
-
-    <div class="conteudo">
-      <h2>Primavera em Mim</h2>
-      <div class="texto">
+<!-- POST 2 -->
+<div class="post">
+  <div class="imagem">
+    <img src="222.png">
+  </div>
+  <div class="conteudo">
+    <h2>Primavera em Mim</h2>
+    <div class="texto">
 Ao deitar à noite, penso em ti.
 O teu rosto projeta-se em meu universo.
 
@@ -170,19 +219,18 @@ até então despercebido.
 Em mim, és o meu raiar e o meu anoitecer,
 quem me tirou do inverno
 e me colocou diante da beleza que és tu.
-      </div>
     </div>
   </div>
+</div>
 
-  <!-- POST 3 -->
-  <div class="post">
-    <div class="imagem">
-      <img src="333.png">
-    </div>
-
-    <div class="conteudo">
-      <h2>Alinhar das Incertezas</h2>
-      <div class="texto">
+<!-- POST 3 -->
+<div class="post">
+  <div class="imagem">
+    <img src="333.png">
+  </div>
+  <div class="conteudo">
+    <h2>Alinhar das Incertezas</h2>
+    <div class="texto">
 E então os sentimentos se despelam aos corpos
 O aroma doce da tua presença rodeia o meu ser
 
@@ -201,14 +249,14 @@ No beijar, o querer dos desejos
 
 E então no alinhar das incertezas,
 nós amamos.
-      </div>
     </div>
   </div>
+</div>
 
 </main>
 
 <footer>
-  © 2026 — escrito no escuro
+© 2026 — escrito no escuro
 </footer>
 
 </body>
