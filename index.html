@@ -37,7 +37,7 @@
     }
 
     main {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       padding: 2rem;
     }
@@ -50,6 +50,7 @@
       padding: 2rem;
       border-radius: 12px;
       align-items: center;
+      box-shadow: 0 0 20px rgba(155,107,204,0.2);
     }
 
     .imagem {
@@ -58,8 +59,14 @@
 
     .imagem img {
       width: 100%;
-      border-radius: 10px;
-      filter: brightness(0.8);
+      border-radius: 12px;
+      filter: brightness(0.85);
+      transition: 0.3s;
+    }
+
+    .imagem img:hover {
+      transform: scale(1.03);
+      filter: brightness(1);
     }
 
     .conteudo {
@@ -100,12 +107,11 @@
   <!-- POST 1 -->
   <div class="post">
     <div class="imagem">
-      <img src="11.png" alt="imagem 1">
+      <img src="111.png">
     </div>
 
     <div class="conteudo">
       <h2>O Caminho de Volta a Ti</h2>
-
       <div class="texto">
 Diante ao pesadelo, eu sinto o teu cheiro
 Me trazendo de volta ao conforto do teu sorriso.
@@ -131,12 +137,11 @@ Onde, nele, eu sorrio diante as incertezas desse teu mundo.
   <!-- POST 2 -->
   <div class="post">
     <div class="imagem">
-      <img src="22.png" alt="imagem 2">
+      <img src="222.png">
     </div>
 
     <div class="conteudo">
       <h2>Primavera em Mim</h2>
-
       <div class="texto">
 Ao deitar à noite, penso em ti.
 O teu rosto projeta-se em meu universo.
@@ -163,12 +168,11 @@ e me colocou diante da beleza que és tu.
   <!-- POST 3 -->
   <div class="post">
     <div class="imagem">
-      <img src="33.png" alt="imagem 3">
+      <img src="333.png">
     </div>
 
     <div class="conteudo">
       <h2>Alinhar das Incertezas</h2>
-
       <div class="texto">
 E então os sentimentos se despelam aos corpos
 O aroma doce da tua presença rodeia o meu ser
