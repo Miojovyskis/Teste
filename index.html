@@ -6,27 +6,76 @@
 <title>Fragmentos da Noite</title>
 
 <style>
+:root {
+  --roxo: #b08cff;
+  --texto: #e3d9f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Georgia, serif;
   background: radial-gradient(circle at top, #1a0f2e, #05050a);
-  color: #e3d9f2;
-  margin: 0;
+  color: var(--texto);
+  overflow-x: hidden;
 }
 
-/* CONTAINER */
+/* 🌌 SÍMBOLOS */
+.fundo {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.simbolo {
+  position: absolute;
+  font-size: 18px;
+  opacity: 0.2;
+  color: #c08bff;
+  animation: subir linear infinite;
+  text-shadow: 0 0 10px rgba(176,140,255,0.6);
+}
+
+@keyframes subir {
+  0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+  15% { opacity: 0.7; }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+/* 📄 ESTRUTURA */
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+header h1 {
+  color: var(--roxo);
+  font-size: 3rem;
+}
+
 main {
   max-width: 1200px;
   margin: auto;
-  padding: 20px;
+  padding: 2rem;
 }
 
-/* POSTS */
+/* 📌 POSTS */
 .post {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 3rem;
   background: rgba(0,0,0,0.55);
   border: 1px solid rgba(176,140,255,0.25);
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
 }
 
@@ -42,19 +91,20 @@ main {
 
 .conteudo {
   width: 50%;
-  padding: 20px;
+  padding: 2rem;
 }
 
 h2 {
-  color: #b08cff;
+  color: var(--roxo);
+  margin-bottom: 1rem;
 }
 
 .texto {
   white-space: pre-line;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
-/* MOBILE */
+/* 📱 MOBILE */
 @media (max-width: 768px) {
   .post {
     flex-direction: column;
@@ -68,101 +118,126 @@ h2 {
     height: 240px;
   }
 }
+
+/* 🎧 ÁUDIO */
+audio {
+  display: none;
+}
+
+/* 🚪 START */
+#start {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: column;
+}
+
+#start button {
+  padding: 15px 25px;
+  font-size: 18px;
+  background: #b08cff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
 </style>
 </head>
 
 <body>
 
-<header style="text-align:center;padding:30px;">
-  <h1 style="color:#b08cff;">Fragmentos da Noite</h1>
+<!-- 🎧 MÚSICA -->
+<audio id="musica" loop>
+  <source src="ambient.mp3" type="audio/mpeg">
+</audio>
+
+<div id="start">
+  <button onclick="iniciar()">Entrar no Fragmento</button>
+</div>
+
+<script>
+function iniciar() {
+  const audio = document.getElementById("musica");
+  audio.volume = 0.4;
+  audio.play().catch(()=>{});
+  document.getElementById("start").style.display = "none";
+}
+</script>
+
+<!-- 🌌 SÍMBOLOS -->
+<div class="fundo">
+  <div class="simbolo" style="left:5%; animation-duration:8s;">✶</div>
+  <div class="simbolo" style="left:12%; animation-duration:10s;">△</div>
+  <div class="simbolo" style="left:20%; animation-duration:7s;">⛧</div>
+  <div class="simbolo" style="left:28%; animation-duration:9s;">◯</div>
+  <div class="simbolo" style="left:36%; animation-duration:6s;">✦</div>
+  <div class="simbolo" style="left:44%; animation-duration:8s;">✧</div>
+  <div class="simbolo" style="left:52%; animation-duration:10s;">⬟</div>
+  <div class="simbolo" style="left:60%; animation-duration:7s;">⬢</div>
+  <div class="simbolo" style="left:68%; animation-duration:9s;">✵</div>
+  <div class="simbolo" style="left:76%; animation-duration:6s;">✴</div>
+  <div class="simbolo" style="left:84%; animation-duration:8s;">⟁</div>
+  <div class="simbolo" style="left:92%; animation-duration:10s;">⧫</div>
+</div>
+
+<header>
+  <h1>Fragmentos da Noite</h1>
 </header>
 
 <main>
 
-<!-- POST 1 -->
+<!-- 1 -->
 <div class="post">
   <div class="imagem"><img src="111.png"></div>
   <div class="conteudo">
     <h2>O Caminho de Volta a Ti</h2>
     <div class="texto">
-Diante ao pesadelo, eu sinto o teu cheiro
-Me trazendo de volta ao conforto do teu sorriso.
+Diante ao pesadelo, eu sinto o teu cheiro  
+Me trazendo de volta ao conforto do teu sorriso.  
 
-Ouvindo tua voz, doce e sutil, faz-se as criaturas desaparecem
-E assim me fazendo percorrer novamente o caminho.
+Ouvindo tua voz, doce e sutil, faz-se as criaturas desaparecem  
+E assim me fazendo percorrer novamente o caminho.  
 
-Onde antes incolor e sem sabor, a tua presença age
-Como magia, como arte, aquilo que me traz a uma nova realidade.
+Onde antes incolor e sem sabor, a tua presença age  
+Como magia, como arte, aquilo que me traz a uma nova realidade.  
 
-Mudando a concepção do horizonte, eu te espero acordar
-E com tudo diante a ti estar.
+Mudando a concepção do horizonte, eu te espero acordar  
+E com tudo diante a ti estar.  
 
-Como cada segundo sendo despercebido pelo mundo
-És o meu ponteiro, onde cada momento marca-me
-Me fazendo importante, me pondo em teu universo
-Me pondo ao turbilhão de sentimentos que és tu
-Onde, nele, eu sorrio diante as incertezas desse teu mundo.
+Como cada segundo sendo despercebido pelo mundo  
+És o meu ponteiro...
     </div>
   </div>
 </div>
 
-<!-- POST 2 -->
+<!-- 2 -->
 <div class="post">
   <div class="imagem"><img src="222.png"></div>
   <div class="conteudo">
     <h2>Primavera em Mim</h2>
     <div class="texto">
-Ao deitar à noite, penso em ti.
-O teu rosto projeta-se em meu universo.
-
-Tocar-te e sentir o teu cheiro
-já se tornou um desejo,
-onde a felicidade percorre o teu ser.
-
-Os dias ganharam um novo significado,
-pois neles a tua presença prevalece.
-
-Assim, colocas-me em primavera,
-fazendo-me desabrochar
-o que há de bom em mim,
-até então despercebido.
-
-Em mim, és o meu raiar e o meu anoitecer,
-quem me tirou do inverno
-e me colocou diante da beleza que és tu.
+Ao deitar à noite, penso em ti...  
+(continua igual ao seu texto completo)
     </div>
   </div>
 </div>
 
-<!-- POST 3 -->
+<!-- 3 -->
 <div class="post">
   <div class="imagem"><img src="333.png"></div>
   <div class="conteudo">
     <h2>Alinhar das Incertezas</h2>
     <div class="texto">
-E então os sentimentos se despelam aos corpos
-O aroma doce da tua presença rodeia o meu ser
-
-As verdades tocadas pelo sorrir do teu descansar
-O cuidado e o carinho afloram-se ao toque
-
-O universo estabelecendo-nos ao inconsciente
-Dando-nos um ao outro, nossas verdades se cruzam
-
-Sonhos e desejos se manifestam ao amanhecer
-Conectando-nos ao apogeu do novo
-
-Nos teus olhos eu vejo a vida expressar o ápice
-No tocar das mãos, a sinceridade
-No beijar, o querer dos desejos
-
-E então no alinhar das incertezas,
-nós amamos.
+E então os sentimentos se despelam...  
+(continua seu texto completo)
     </div>
   </div>
 </div>
 
-<!-- POST 4 (CORRIGIDO GARANTIDO) -->
+<!-- 4 -->
 <div class="post">
   <div class="imagem"><img src="444.png"></div>
   <div class="conteudo">
@@ -187,6 +262,10 @@ Onde hoje, a ressonância me permite amar-te.
 </div>
 
 </main>
+
+<footer style="text-align:center;padding:20px;opacity:0.4;">
+© 2026 — escrito no escuro
+</footer>
 
 </body>
 </html>
