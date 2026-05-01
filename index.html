@@ -78,7 +78,6 @@ main {
   background: rgba(0,0,0,0.55);
   border: 1px solid rgba(176,140,255,0.25);
   box-shadow: 0 0 30px rgba(120,80,200,0.15);
-  transition: 0.3s ease;
 }
 
 .post:hover {
@@ -106,7 +105,6 @@ main {
 .conteudo h2 {
   color: var(--roxo-suave);
   margin-bottom: 1rem;
-  text-shadow: 0 0 10px rgba(176,140,255,0.3);
 }
 
 .texto {
@@ -120,27 +118,12 @@ footer {
   opacity: 0.4;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .post {
-    flex-direction: column;
-  }
-
-  .imagem, .conteudo {
-    width: 100%;
-  }
-
-  .imagem {
-    height: 240px;
-  }
-}
-
-/* ÁUDIO OCULTO */
+/* AUDIO */
 audio {
   display: none;
 }
 
-/* BOTÃO INICIAL */
+/* START */
 #start {
   position: fixed;
   inset: 0;
@@ -149,7 +132,6 @@ audio {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  flex-direction: column;
 }
 
 #start button {
@@ -158,14 +140,12 @@ audio {
   background: #b08cff;
   border: none;
   border-radius: 10px;
-  cursor: pointer;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎵 ÁUDIO -->
 <audio id="musica" loop>
   <source src="ambient.mp3" type="audio/mpeg">
 </audio>
@@ -183,16 +163,12 @@ function iniciar() {
 }
 </script>
 
-<!-- FUNDO -->
 <div class="fundo">
   <div class="simbolo" style="left:10%; animation-duration:9s;">✶</div>
-  <div class="simbolo" style="left:20%; animation-duration:11s;">△</div>
-  <div class="simbolo" style="left:30%; animation-duration:7s;">⛧</div>
-  <div class="simbolo" style="left:40%; animation-duration:10s;">◯</div>
-  <div class="simbolo" style="left:50%; animation-duration:8s;">✦</div>
-  <div class="simbolo" style="left:60%; animation-duration:12s;">✧</div>
-  <div class="simbolo" style="left:70%; animation-duration:9s;">⬟</div>
-  <div class="simbolo" style="left:80%; animation-duration:6s;">⬢</div>
+  <div class="simbolo" style="left:25%; animation-duration:11s;">△</div>
+  <div class="simbolo" style="left:40%; animation-duration:7s;">⛧</div>
+  <div class="simbolo" style="left:55%; animation-duration:10s;">◯</div>
+  <div class="simbolo" style="left:70%; animation-duration:8s;">✦</div>
 </div>
 
 <header>
@@ -208,9 +184,22 @@ function iniciar() {
     <h2>O Caminho de Volta a Ti</h2>
     <div class="texto">
 Diante ao pesadelo, eu sinto o teu cheiro
-Me trazendo de volta ao conforto do teu sorriso...
+Me trazendo de volta ao conforto do teu sorriso.
 
-(O resto do seu texto original aqui)
+Ouvindo tua voz, doce e sutil, faz-se as criaturas desaparecem
+E assim me fazendo percorrer novamente o caminho.
+
+Onde antes incolor e sem sabor, a tua presença age
+Como magia, como arte, aquilo que me traz a uma nova realidade.
+
+Mudando a concepção do horizonte, eu te espero acordar
+E com tudo diante a ti estar.
+
+Como cada segundo sendo despercebido pelo mundo
+És o meu ponteiro, onde cada momento marca-me
+Me fazendo importante, me pondo em teu universo
+Me pondo ao turbilhão de sentimentos que és tu
+Onde, nele, eu sorrio diante as incertezas desse teu mundo.
     </div>
   </div>
 </div>
@@ -221,8 +210,24 @@ Me trazendo de volta ao conforto do teu sorriso...
   <div class="conteudo">
     <h2>Primavera em Mim</h2>
     <div class="texto">
-Ao deitar à noite, penso em ti...
-(O texto original aqui)
+Ao deitar à noite, penso em ti.
+O teu rosto projeta-se em meu universo.
+
+Tocar-te e sentir o teu cheiro
+já se tornou um desejo,
+onde a felicidade percorre o teu ser.
+
+Os dias ganharam um novo significado,
+pois neles a tua presença prevalece.
+
+Assim, colocas-me em primavera,
+fazendo-me desabrochar
+o que há de bom em mim,
+até então despercebido.
+
+Em mim, és o meu raiar e o meu anoitecer,
+quem me tirou do inverno
+e me colocou diante da beleza que és tu.
     </div>
   </div>
 </div>
@@ -233,31 +238,47 @@ Ao deitar à noite, penso em ti...
   <div class="conteudo">
     <h2>Alinhar das Incertezas</h2>
     <div class="texto">
-E então os sentimentos se despelam...
-(O texto original aqui)
+E então os sentimentos se despelam aos corpos
+O aroma doce da tua presença rodeia o meu ser
+
+As verdades tocadas pelo sorrir do teu descansar
+O cuidado e o carinho afloram-se ao toque
+
+O universo estabelecendo-nos ao inconsciente
+Dando-nos um ao outro, nossas verdades se cruzam
+
+Sonhos e desejos se manifestam ao amanhecer
+Conectando-nos ao apogeu do novo
+
+Nos teus olhos eu vejo a vida expressar o ápice
+No tocar das mãos, a sinceridade
+No beijar, o querer dos desejos
+
+E então no alinhar das incertezas,
+nós amamos.
     </div>
   </div>
 </div>
 
-<!-- 🌙 POST 4 (NOVO) -->
+<!-- POST 4 -->
 <div class="post">
   <div class="imagem"><img src="444.png"></div>
   <div class="conteudo">
     <h2>O Altar Onde Me Encontro</h2>
     <div class="texto">
-Me livrando dos meus tormentos, vejo-te segurar minha mão  
-Buscando-me de novo a realidade, que nela predominas  
+Me livrando dos meus tormentos, vejo-te segurar minha mão
+Buscando-me de novo a realidade, que nela predominas
 
-Anulando cada ilusão que existe em mim, me colocando em teus braços  
-Assim me levando pela vida diante a ti, onde hoje és meu altar  
+Anulando cada ilusão que existe em mim, me colocando em teus braços
+Assim me levando pela vida diante a ti, onde hoje és meu altar
 
-Nas páginas em branco, eu me conecto a ti  
-Todo o sentimento não vivido, pinto-te a mim  
+Nas páginas em branco, eu me conecto a ti
+Todo o sentimento não vivido, pinto-te a mim
 
-Quando antes tragado pela realidade cruel que sou  
-Hoje se tornou o meu apogeu, onde zelo e amo  
+Quando antes tragado pela realidade cruel que sou
+Hoje se tornou o meu apogeu, onde zelo e amo
 
-Criando pontilhados de novos caminhos  
+Criando pontilhados de novos caminhos
 Onde hoje, a ressonância me permite amar-te.
     </div>
   </div>
