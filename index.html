@@ -14,64 +14,63 @@ body {
   overflow-x: hidden;
 }
 
-/* 🌫️ NÉVOA REAL (AGORA VISÍVEL) */
+/* 🌫️ NÉVOA SUAVE */
 .fog {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  filter: blur(40px);
+  filter: blur(45px);
   opacity: 0.35;
-  animation: fogMove 25s ease-in-out infinite;
 }
 
 .fog1 {
-  background: radial-gradient(circle at 30% 40%, rgba(200,200,255,0.25), transparent 60%);
+  background: radial-gradient(circle at 30% 40%, rgba(200,200,255,0.20), transparent 60%);
 }
 
 .fog2 {
-  background: radial-gradient(circle at 70% 60%, rgba(150,120,255,0.20), transparent 60%);
-  animation-duration: 40s;
-  opacity: 0.25;
+  background: radial-gradient(circle at 70% 60%, rgba(160,120,255,0.18), transparent 60%);
 }
 
 .fog3 {
-  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.15), transparent 70%);
-  animation-duration: 60s;
-  opacity: 0.18;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.10), transparent 70%);
 }
 
-@keyframes fogMove {
-  0% { transform: translateX(-5%) translateY(0); }
-  50% { transform: translateX(5%) translateY(-3%); }
-  100% { transform: translateX(-5%) translateY(0); }
-}
-
-/* 🌟 VAGALUMES (AGORA VISÍVEIS) */
+/* 🐝 VAGALUMES REALISTAS */
 .firefly {
   position: fixed;
-  width: 6px;
-  height: 6px;
-  background: rgba(255, 240, 140, 1);
+  bottom: -10px;
+  background: radial-gradient(circle, rgba(255,240,140,1) 0%, rgba(255,200,80,0.6) 40%, transparent 70%);
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(255, 230, 120, 1);
-  animation: floatFirefly linear infinite, glow 2s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(255,220,120,0.8);
+  animation: rise linear infinite, flicker 2.5s infinite;
   pointer-events: none;
   z-index: 1;
 }
 
-@keyframes floatFirefly {
-  0% { transform: translateY(110vh) translateX(0); }
-  100% { transform: translateY(-10vh) translateX(60px); }
+/* subida real */
+@keyframes rise {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(40px);
+    opacity: 0;
+  }
 }
 
-@keyframes glow {
-  0%, 100% { opacity: 0.2; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(2); }
+/* piscada natural */
+@keyframes flicker {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
 }
 
 /* 📄 CONTEÚDO */
-header, main, footer {
+header, main {
   position: relative;
   z-index: 2;
 }
@@ -102,10 +101,9 @@ main {
   border: 1px solid rgba(176,140,255,0.25);
 }
 
-/* 🔥 IMAGENS MAIORES (esticadas verticalmente) */
 .post img {
   width: 50%;
-  height: 420px;
+  height: 450px;
   object-fit: cover;
 }
 
@@ -135,7 +133,7 @@ h2 {
   }
 }
 
-/* 🎧 ÁUDIO */
+/* ÁUDIO */
 audio { display:none; }
 
 /* START */
@@ -172,7 +170,6 @@ audio { display:none; }
   <source src="ambient.mp3" type="audio/mpeg">
 </audio>
 
-<!-- 🚪 START -->
 <div id="start">
   <button onclick="startSite()">Entrar no Fragmento</button>
 </div>
@@ -186,7 +183,7 @@ function startSite(){
 }
 </script>
 
-<!-- 🌟 VAGALUMES FORÇADOS -->
+<!-- 🐝 VAGALUMES REALISTAS -->
 <script>
 const count = 35;
 
@@ -194,9 +191,19 @@ for(let i = 0; i < count; i++){
   const f = document.createElement("div");
   f.className = "firefly";
 
+  // tamanho variável (realismo)
+  const size = Math.random() * 6 + 2;
+  f.style.width = size + "px";
+  f.style.height = size + "px";
+
+  // posição
   f.style.left = Math.random() * 100 + "vw";
-  f.style.animationDuration = (5 + Math.random() * 10) + "s";
-  f.style.animationDelay = Math.random() * 5 + "s";
+
+  // tempo aleatório de subida
+  f.style.animationDuration = (6 + Math.random() * 12) + "s";
+
+  // atraso aleatório
+  f.style.animationDelay = Math.random() * 6 + "s";
 
   document.body.appendChild(f);
 }
@@ -212,7 +219,24 @@ for(let i = 0; i < count; i++){
   <img src="111.png">
   <div class="text">
 <h2>O Caminho de Volta a Ti</h2>
-Diante ao pesadelo, eu sinto o teu cheiro...
+
+Diante ao pesadelo, eu sinto o teu cheiro  
+Me trazendo de volta ao conforto do teu sorriso.  
+
+Ouvindo tua voz, doce e sutil, faz-se as criaturas desaparecem  
+E assim me fazendo percorrer novamente o caminho.  
+
+Onde antes incolor e sem sabor, a tua presença age  
+Como magia, como arte, aquilo que me traz a uma nova realidade.  
+
+Mudando a concepção do horizonte, eu te espero acordar  
+E com tudo diante a ti estar.  
+
+Como cada segundo sendo despercebido pelo mundo  
+És o meu ponteiro, onde cada momento marca-me  
+Me fazendo importante, me pondo em teu universo  
+Me pondo ao turbilhão de sentimentos que és tu  
+Onde, nele, eu sorrio diante as incertezas desse teu mundo.
   </div>
 </div>
 
@@ -220,7 +244,25 @@ Diante ao pesadelo, eu sinto o teu cheiro...
   <img src="222.png">
   <div class="text">
 <h2>Primavera em Mim</h2>
-Ao deitar à noite, penso em ti...
+
+Ao deitar à noite, penso em ti.  
+O teu rosto projeta-se em meu universo.  
+
+Tocar-te e sentir o teu cheiro  
+já se tornou um desejo,  
+onde a felicidade percorre o teu ser.  
+
+Os dias ganharam um novo significado,  
+pois neles a tua presença prevalece.  
+
+Assim, colocas-me em primavera,  
+fazendo-me desabrochar  
+o que há de bom em mim,  
+até então despercebido.  
+
+Em mim, és o meu raiar e o meu anoitecer,  
+quem me tirou do inverno  
+e me colocou diante da beleza que és tu.
   </div>
 </div>
 
@@ -228,7 +270,25 @@ Ao deitar à noite, penso em ti...
   <img src="333.png">
   <div class="text">
 <h2>Alinhar das Incertezas</h2>
-E então os sentimentos se despelam...
+
+E então os sentimentos se despelam aos corpos  
+O aroma doce da tua presença rodeia o meu ser  
+
+As verdades tocadas pelo sorrir do teu descansar  
+O cuidado e o carinho afloram-se ao toque  
+
+O universo estabelecendo-nos ao inconsciente  
+Dando-nos um ao outro, nossas verdades se cruzam  
+
+Sonhos e desejos se manifestam ao amanhecer  
+Conectando-nos ao apogeu do novo  
+
+Nos teus olhos eu vejo a vida expressar o ápice  
+No tocar das mãos, a sinceridade  
+No beijar, o querer dos desejos  
+
+E então no alinhar das incertezas,  
+nós amamos.
   </div>
 </div>
 
@@ -236,7 +296,21 @@ E então os sentimentos se despelam...
   <img src="444.png">
   <div class="text">
 <h2>O Altar Onde Me Encontro</h2>
-Me livrando dos meus tormentos...
+
+Me livrando dos meus tormentos, vejo-te segurar minha mão  
+Buscando-me de novo a realidade, que nela predominas  
+
+Anulando cada ilusão que existe em mim, me colocando em teus braços  
+Assim me levando pela vida diante a ti, onde hoje és meu altar  
+
+Nas páginas em branco, eu me conecto a ti  
+Todo o sentimento não vivido, pinto-te a mim  
+
+Quando antes tragado pela realidade cruel que sou  
+Hoje se tornou o meu apogeu, onde zelo e amo  
+
+Criando pontilhados de novos caminhos  
+Onde hoje, a ressonância me permite amar-te.
   </div>
 </div>
 
