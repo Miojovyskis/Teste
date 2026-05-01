@@ -7,10 +7,10 @@
 
   <style>
     :root {
-      --preto: #0b0b0f;
-      --roxo-escuro: #1a1026;
-      --lilas: #9b6bcc;
-      --cinza: #cfcad6;
+      --preto: #05050a;
+      --roxo: #6a2cff;
+      --roxo-suave: #9b6bcc;
+      --texto: #d6cde0;
     }
 
     * {
@@ -21,23 +21,22 @@
 
     body {
       font-family: Georgia, serif;
-      background: radial-gradient(circle at top, var(--roxo-escuro), var(--preto));
-      color: var(--cinza);
-      line-height: 1.8;
+      background: radial-gradient(circle at top, #120a1f, #05050a);
+      color: var(--texto);
     }
 
     header {
       text-align: center;
-      padding: 4rem 2rem;
+      padding: 3rem;
     }
 
     header h1 {
-      color: var(--lilas);
-      font-size: 3rem;
+      color: var(--roxo-suave);
+      font-size: 2.8rem;
     }
 
     main {
-      max-width: 1200px;
+      max-width: 1300px;
       margin: auto;
       padding: 2rem;
     }
@@ -45,15 +44,15 @@
     .post {
       display: flex;
       margin-bottom: 3rem;
-      background: rgba(0,0,0,0.6);
-      border-radius: 12px;
+      border: 1px solid rgba(155,107,204,0.4);
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 0 30px rgba(155,107,204,0.2);
+      background: rgba(0,0,0,0.6);
+      box-shadow: 0 0 25px rgba(155,107,204,0.15);
     }
 
     .imagem {
       width: 50%;
-      min-height: 100%;
     }
 
     .imagem img {
@@ -61,32 +60,31 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: brightness(0.8);
-      transition: 0.4s;
-    }
-
-    .imagem img:hover {
-      filter: brightness(1);
-      transform: scale(1.05);
     }
 
     .conteudo {
       width: 50%;
-      padding: 2rem;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .conteudo h2 {
-      color: var(--lilas);
-      margin-bottom: 1rem;
+      color: var(--roxo-suave);
+      margin-bottom: 1.2rem;
+      font-size: 1.8rem;
     }
 
     .texto {
       white-space: pre-line;
+      line-height: 1.7;
+      font-size: 1.05rem;
     }
 
     footer {
       text-align: center;
-      padding: 3rem;
+      padding: 2rem;
       opacity: 0.5;
     }
 
