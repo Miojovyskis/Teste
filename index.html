@@ -6,82 +6,28 @@
 <title>Fragmentos da Noite</title>
 
 <style>
-:root {
-  --roxo-suave: #b08cff;
-  --texto: #e3d9f2;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: Georgia, serif;
   background: radial-gradient(circle at top, #1a0f2e, #05050a);
-  color: var(--texto);
-  overflow-x: hidden;
+  color: #e3d9f2;
+  margin: 0;
 }
 
-/* FUNDO */
-.fundo {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.simbolo {
-  position: absolute;
-  font-size: 18px;
-  opacity: 0.18;
-  color: #c08bff;
-  animation: flutuar linear infinite;
-  text-shadow: 0 0 12px rgba(160,90,255,0.6);
-}
-
-@keyframes flutuar {
-  0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
-  15% { opacity: 0.6; }
-  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
-}
-
-/* CONTEÚDO */
-header, main, footer {
-  position: relative;
-  z-index: 1;
-}
-
-header {
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-header h1 {
-  color: var(--roxo-suave);
-  font-size: 3rem;
-  text-shadow: 0 0 20px rgba(176,140,255,0.4);
-}
-
+/* CONTAINER */
 main {
   max-width: 1200px;
   margin: auto;
-  padding: 2rem;
+  padding: 20px;
 }
 
+/* POSTS */
 .post {
   display: flex;
-  margin-bottom: 3rem;
-  border-radius: 16px;
-  overflow: hidden;
+  margin-bottom: 40px;
   background: rgba(0,0,0,0.55);
   border: 1px solid rgba(176,140,255,0.25);
-  box-shadow: 0 0 30px rgba(120,80,200,0.15);
-}
-
-.post:hover {
-  transform: scale(1.01);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .imagem {
@@ -96,83 +42,39 @@ main {
 
 .conteudo {
   width: 50%;
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 20px;
 }
 
-.conteudo h2 {
-  color: var(--roxo-suave);
-  margin-bottom: 1rem;
+h2 {
+  color: #b08cff;
 }
 
 .texto {
   white-space: pre-line;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  opacity: 0.4;
-}
+/* MOBILE */
+@media (max-width: 768px) {
+  .post {
+    flex-direction: column;
+  }
 
-/* AUDIO */
-audio {
-  display: none;
-}
+  .imagem, .conteudo {
+    width: 100%;
+  }
 
-/* START */
-#start {
-  position: fixed;
-  inset: 0;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-#start button {
-  padding: 15px 25px;
-  font-size: 18px;
-  background: #b08cff;
-  border: none;
-  border-radius: 10px;
+  .imagem {
+    height: 240px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<audio id="musica" loop>
-  <source src="ambient.mp3" type="audio/mpeg">
-</audio>
-
-<div id="start">
-  <button onclick="iniciar()">Entrar no Fragmento</button>
-</div>
-
-<script>
-function iniciar() {
-  const audio = document.getElementById("musica");
-  audio.volume = 0.35;
-  audio.play();
-  document.getElementById("start").style.display = "none";
-}
-</script>
-
-<div class="fundo">
-  <div class="simbolo" style="left:10%; animation-duration:9s;">✶</div>
-  <div class="simbolo" style="left:25%; animation-duration:11s;">△</div>
-  <div class="simbolo" style="left:40%; animation-duration:7s;">⛧</div>
-  <div class="simbolo" style="left:55%; animation-duration:10s;">◯</div>
-  <div class="simbolo" style="left:70%; animation-duration:8s;">✦</div>
-</div>
-
-<header>
-  <h1>Fragmentos da Noite</h1>
+<header style="text-align:center;padding:30px;">
+  <h1 style="color:#b08cff;">Fragmentos da Noite</h1>
 </header>
 
 <main>
@@ -260,35 +162,31 @@ nós amamos.
   </div>
 </div>
 
-<!-- POST 4 -->
+<!-- POST 4 (CORRIGIDO GARANTIDO) -->
 <div class="post">
   <div class="imagem"><img src="444.png"></div>
   <div class="conteudo">
     <h2>O Altar Onde Me Encontro</h2>
     <div class="texto">
-Me livrando dos meus tormentos, vejo-te segurar minha mão
-Buscando-me de novo a realidade, que nela predominas
+Me livrando dos meus tormentos, vejo-te segurar minha mão  
+Buscando-me de novo a realidade, que nela predominas  
 
-Anulando cada ilusão que existe em mim, me colocando em teus braços
-Assim me levando pela vida diante a ti, onde hoje és meu altar
+Anulando cada ilusão que existe em mim, me colocando em teus braços  
+Assim me levando pela vida diante a ti, onde hoje és meu altar  
 
-Nas páginas em branco, eu me conecto a ti
-Todo o sentimento não vivido, pinto-te a mim
+Nas páginas em branco, eu me conecto a ti  
+Todo o sentimento não vivido, pinto-te a mim  
 
-Quando antes tragado pela realidade cruel que sou
-Hoje se tornou o meu apogeu, onde zelo e amo
+Quando antes tragado pela realidade cruel que sou  
+Hoje se tornou o meu apogeu, onde zelo e amo  
 
-Criando pontilhados de novos caminhos
+Criando pontilhados de novos caminhos  
 Onde hoje, a ressonância me permite amar-te.
     </div>
   </div>
 </div>
 
 </main>
-
-<footer>
-© 2026 — escrito no escuro
-</footer>
 
 </body>
 </html>
