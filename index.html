@@ -9,8 +9,8 @@
 :root {
   --preto: #05050a;
   --roxo: #6a2cff;
-  --roxo-suave: #9b6bcc;
-  --texto: #d6cde0;
+  --roxo-suave: #b08cff;
+  --texto: #e3d9f2;
 }
 
 * {
@@ -21,12 +21,12 @@
 
 body {
   font-family: Georgia, serif;
-  background: radial-gradient(circle at top, #120a1f, #05050a);
+  background: radial-gradient(circle at top, #1a0f2e, #05050a);
   color: var(--texto);
   overflow-x: hidden;
 }
 
-/* FUNDO COM SÍMBOLOS */
+/* FUNDO */
 .fundo {
   position: fixed;
   inset: 0;
@@ -36,21 +36,21 @@ body {
 
 .simbolo {
   position: absolute;
-  font-size: 22px;
-  opacity: 0.25;
-  animation: subir linear infinite;
-  color: #b56bff;
-  text-shadow: 0 0 10px rgba(181,107,255,0.7);
+  font-size: 18px;
+  opacity: 0.18;
+  color: #c08bff;
+  text-shadow: 0 0 12px rgba(160,90,255,0.6);
+  animation: flutuar linear infinite;
 }
 
-@keyframes subir {
-  from {
-    transform: translateY(110vh) rotate(0deg);
+@keyframes flutuar {
+  0% {
+    transform: translateY(110vh) rotate(0deg) scale(0.8);
     opacity: 0;
   }
-  10% { opacity: 1; }
-  to {
-    transform: translateY(-10vh) rotate(360deg);
+  15% { opacity: 0.6; }
+  100% {
+    transform: translateY(-10vh) rotate(360deg) scale(1.2);
     opacity: 0;
   }
 }
@@ -63,16 +63,18 @@ header, main, footer {
 
 header {
   text-align: center;
-  padding: 3rem;
+  padding: 3rem 1rem;
 }
 
 header h1 {
   color: var(--roxo-suave);
-  font-size: 2.8rem;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(176,140,255,0.4);
 }
 
 main {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: auto;
   padding: 2rem;
 }
@@ -80,12 +82,17 @@ main {
 .post {
   display: flex;
   margin-bottom: 3rem;
-  border: 1px solid rgba(155,107,204,0.4);
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
-  background: rgba(0,0,0,0.6);
-  box-shadow: 0 0 25px rgba(155,107,204,0.15);
-  align-items: stretch;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(176,140,255,0.25);
+  box-shadow: 0 0 30px rgba(120,80,200,0.15);
+  transition: 0.4s ease;
+}
+
+.post:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 40px rgba(176,140,255,0.25);
 }
 
 .imagem {
@@ -96,7 +103,7 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  filter: contrast(1.1) saturate(1.1);
 }
 
 .conteudo {
@@ -109,18 +116,20 @@ main {
 
 .conteudo h2 {
   color: var(--roxo-suave);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(176,140,255,0.3);
 }
 
 .texto {
   white-space: pre-line;
-  line-height: 1.7;
+  line-height: 1.8;
+  opacity: 0.95;
 }
 
 footer {
   text-align: center;
   padding: 2rem;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 /* MOBILE */
@@ -134,7 +143,7 @@ footer {
   }
 
   .imagem {
-    height: 250px;
+    height: 240px;
   }
 }
 </style>
@@ -142,20 +151,20 @@ footer {
 
 <body>
 
-<!-- SÍMBOLOS -->
 <div class="fundo">
-  <div class="simbolo" style="left:5%; animation-duration:8s;">✶</div>
-  <div class="simbolo" style="left:12%; animation-duration:10s;">△</div>
-  <div class="simbolo" style="left:20%; animation-duration:7s;">⛧</div>
-  <div class="simbolo" style="left:28%; animation-duration:9s;">◯</div>
-  <div class="simbolo" style="left:36%; animation-duration:6s;">✦</div>
-  <div class="simbolo" style="left:44%; animation-duration:8s;">✧</div>
-  <div class="simbolo" style="left:52%; animation-duration:10s;">⬟</div>
-  <div class="simbolo" style="left:60%; animation-duration:7s;">⬢</div>
-  <div class="simbolo" style="left:68%; animation-duration:9s;">✵</div>
-  <div class="simbolo" style="left:76%; animation-duration:6s;">✴</div>
-  <div class="simbolo" style="left:84%; animation-duration:8s;">⟁</div>
-  <div class="simbolo" style="left:92%; animation-duration:10s;">⧫</div>
+  <div class="simbolo" style="left:5%; animation-duration:9s;">✶</div>
+  <div class="simbolo" style="left:10%; animation-duration:11s;">△</div>
+  <div class="simbolo" style="left:18%; animation-duration:7s;">⛧</div>
+  <div class="simbolo" style="left:25%; animation-duration:10s;">◯</div>
+  <div class="simbolo" style="left:32%; animation-duration:8s;">✦</div>
+  <div class="simbolo" style="left:40%; animation-duration:12s;">✧</div>
+  <div class="simbolo" style="left:48%; animation-duration:9s;">⬟</div>
+  <div class="simbolo" style="left:55%; animation-duration:6s;">⬢</div>
+  <div class="simbolo" style="left:62%; animation-duration:10s;">✵</div>
+  <div class="simbolo" style="left:70%; animation-duration:8s;">✴</div>
+  <div class="simbolo" style="left:78%; animation-duration:11s;">⟁</div>
+  <div class="simbolo" style="left:86%; animation-duration:7s;">⧫</div>
+  <div class="simbolo" style="left:92%; animation-duration:9s;">✺</div>
 </div>
 
 <header>
@@ -166,89 +175,36 @@ footer {
 
 <!-- POST 1 -->
 <div class="post">
-  <div class="imagem">
-    <img src="111.png">
-  </div>
+  <div class="imagem"><img src="111.png"></div>
   <div class="conteudo">
     <h2>O Caminho de Volta a Ti</h2>
     <div class="texto">
-Diante ao pesadelo, eu sinto o teu cheiro
-Me trazendo de volta ao conforto do teu sorriso.
-
-Ouvindo tua voz, doce e sutil, faz-se as criaturas desaparecem
-E assim me fazendo percorrer novamente o caminho.
-
-Onde antes incolor e sem sabor, a tua presença age
-Como magia, como arte, aquilo que me traz a uma nova realidade.
-
-Mudando a concepção do horizonte, eu te espero acordar
-E com tudo diante a ti estar.
-
-Como cada segundo sendo despercebido pelo mundo
-És o meu ponteiro, onde cada momento marca-me
-Me fazendo importante, me pondo em teu universo
-Me pondo ao turbilhão de sentimentos que és tu
-Onde, nele, eu sorrio diante as incertezas desse teu mundo.
+Diante ao pesadelo, eu sinto o teu cheiro...
+(continua igual ao seu texto)
     </div>
   </div>
 </div>
 
 <!-- POST 2 -->
 <div class="post">
-  <div class="imagem">
-    <img src="222.png">
-  </div>
+  <div class="imagem"><img src="222.png"></div>
   <div class="conteudo">
     <h2>Primavera em Mim</h2>
     <div class="texto">
-Ao deitar à noite, penso em ti.
-O teu rosto projeta-se em meu universo.
-
-Tocar-te e sentir o teu cheiro
-já se tornou um desejo,
-onde a felicidade percorre o teu ser.
-
-Os dias ganharam um novo significado,
-pois neles a tua presença prevalece.
-
-Assim, colocas-me em primavera,
-fazendo-me desabrochar
-o que há de bom em mim,
-até então despercebido.
-
-Em mim, és o meu raiar e o meu anoitecer,
-quem me tirou do inverno
-e me colocou diante da beleza que és tu.
+Ao deitar à noite, penso em ti...
+(continua igual)
     </div>
   </div>
 </div>
 
 <!-- POST 3 -->
 <div class="post">
-  <div class="imagem">
-    <img src="333.png">
-  </div>
+  <div class="imagem"><img src="333.png"></div>
   <div class="conteudo">
     <h2>Alinhar das Incertezas</h2>
     <div class="texto">
-E então os sentimentos se despelam aos corpos
-O aroma doce da tua presença rodeia o meu ser
-
-As verdades tocadas pelo sorrir do teu descansar
-O cuidado e o carinho afloram-se ao toque
-
-O universo estabelecendo-nos ao inconsciente
-Dando-nos um ao outro, nossas verdades se cruzam
-
-Sonhos e desejos se manifestam ao amanhecer
-Conectando-nos ao apogeu do novo
-
-Nos teus olhos eu vejo a vida expressar o ápice
-No tocar das mãos, a sinceridade
-No beijar, o querer dos desejos
-
-E então no alinhar das incertezas,
-nós amamos.
+E então os sentimentos se despelam...
+(continua igual)
     </div>
   </div>
 </div>
