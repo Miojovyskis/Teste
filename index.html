@@ -78,12 +78,10 @@ main {
   background: rgba(0,0,0,0.55);
   border: 1px solid rgba(176,140,255,0.25);
   box-shadow: 0 0 30px rgba(120,80,200,0.15);
-  transition: 0.4s ease;
 }
 
 .post:hover {
   transform: scale(1.01);
-  box-shadow: 0 0 40px rgba(176,140,255,0.25);
 }
 
 .imagem {
@@ -107,7 +105,6 @@ main {
 .conteudo h2 {
   color: var(--roxo-suave);
   margin-bottom: 1rem;
-  text-shadow: 0 0 10px rgba(176,140,255,0.3);
 }
 
 .texto {
@@ -115,10 +112,31 @@ main {
   line-height: 1.8;
 }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  opacity: 0.4;
+/* BOTÃO DE ENTRADA */
+#start {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: column;
+}
+
+#start button {
+  padding: 15px 25px;
+  font-size: 18px;
+  background: #b08cff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#status {
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0.7;
 }
 
 /* MOBILE */
@@ -136,67 +154,62 @@ footer {
   }
 }
 
-/* TELA DE ENTRADA */
-#start {
-  position: fixed;
-  inset: 0;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-#start button {
-  padding: 15px 25px;
-  font-size: 18px;
-  background: #b08cff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  color: #000;
-  box-shadow: 0 0 25px rgba(176,140,255,0.5);
+/* AUDIO OCULTO */
+audio {
+  display: none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎵 MÚSICA -->
-<audio id="musica" loop>
+<!-- 🎵 ÁUDIO -->
+<audio id="musica" loop preload="auto">
   <source src="ambient.mp3" type="audio/mpeg">
 </audio>
 
-<!-- BOTÃO DE ENTRADA -->
+<!-- 🚨 TELA DE ENTRADA -->
 <div id="start">
-  <button onclick="iniciarSite()">Entrar no Fragmento</button>
+  <button onclick="iniciar()">Entrar no Fragmento</button>
+  <div id="status">aguardando áudio...</div>
 </div>
 
 <script>
-function iniciarSite() {
+function iniciar() {
   const audio = document.getElementById("musica");
+  const status = document.getElementById("status");
+
   audio.volume = 0.35;
-  audio.play();
+
+  audio.play().then(() => {
+    status.innerText = "🎧 música ativada";
+  }).catch(() => {
+    status.innerText = "⚠ áudio bloqueado ou não encontrado";
+  });
 
   document.getElementById("start").style.display = "none";
 }
+
+/* DETECTA SE O ARQUIVO EXISTE */
+window.addEventListener("load", () => {
+  const audio = document.getElementById("musica");
+
+  audio.addEventListener("error", () => {
+    console.log("Erro: ambient.mp3 não encontrado ou inválido");
+  });
+});
 </script>
 
 <!-- FUNDO -->
 <div class="fundo">
-  <div class="simbolo" style="left:5%; animation-duration:9s;">✶</div>
-  <div class="simbolo" style="left:10%; animation-duration:11s;">△</div>
-  <div class="simbolo" style="left:18%; animation-duration:7s;">⛧</div>
-  <div class="simbolo" style="left:25%; animation-duration:10s;">◯</div>
-  <div class="simbolo" style="left:32%; animation-duration:8s;">✦</div>
-  <div class="simbolo" style="left:40%; animation-duration:12s;">✧</div>
-  <div class="simbolo" style="left:48%; animation-duration:9s;">⬟</div>
-  <div class="simbolo" style="left:55%; animation-duration:6s;">⬢</div>
-  <div class="simbolo" style="left:62%; animation-duration:10s;">✵</div>
-  <div class="simbolo" style="left:70%; animation-duration:8s;">✴</div>
-  <div class="simbolo" style="left:78%; animation-duration:11s;">⟁</div>
-  <div class="simbolo" style="left:86%; animation-duration:7s;">⧫</div>
-  <div class="simbolo" style="left:92%; animation-duration:9s;">✺</div>
+  <div class="simbolo" style="left:10%; animation-duration:9s;">✶</div>
+  <div class="simbolo" style="left:20%; animation-duration:11s;">△</div>
+  <div class="simbolo" style="left:30%; animation-duration:7s;">⛧</div>
+  <div class="simbolo" style="left:40%; animation-duration:10s;">◯</div>
+  <div class="simbolo" style="left:50%; animation-duration:8s;">✦</div>
+  <div class="simbolo" style="left:60%; animation-duration:12s;">✧</div>
+  <div class="simbolo" style="left:70%; animation-duration:9s;">⬟</div>
+  <div class="simbolo" style="left:80%; animation-duration:6s;">⬢</div>
 </div>
 
 <header>
